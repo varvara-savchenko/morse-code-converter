@@ -60,11 +60,14 @@ document.getElementById("convertButton").addEventListener("click", function () {
     } else if (inputText.toLowerCase() === "i love you") {
         const morseCode = textToMorse(inputText);
         outputElement.textContent = "Morse Code: " + morseCode + " me2 ♡";
-    } else if (/[a-z]/i.test(inputText)) {
+    } else if (/[a-z0-9]/i.test(inputText)) {
         const morseCode = textToMorse(inputText);
         outputElement.textContent = "Morse Code: " + morseCode;
-    } else {
+    }
+    else if (/^[.\- ]+$/.test(inputText)) {
         const text = morseToText(inputText);
         outputElement.textContent = "Text: " + text;
+    } else {
+        outputElement.textContent = "Invalid characters.";
     }
 });
