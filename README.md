@@ -1,3 +1,13 @@
+
+url to try:
+- 
 https://varvara-savchenko.github.io/morse-code-converter/
 
-find Easter egg
+cases that were covered:
+- 
+- empty input;
+- invalid characters;
+- input with letter and/or numbers;
+- input with morse characters;
+
+I've heard it's still popular among amateur radio operators, so maybe it'll find its small audience :D 
