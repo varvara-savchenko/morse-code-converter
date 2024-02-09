@@ -1,0 +1,39 @@
+body {
+    font-family: 'Lucida Sans Unicode';
+    text-align: center;
+    background-color: rgb(36, 36, 38);
+}
+
+input,
+#convertButton {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-left: -1px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(218, 216, 216);
+    background-color: rgb(36, 36, 38);
+    color: rgb(218, 216, 216);
+    cursor: pointer;
+}
+
+input::placeholder {
+    font-size: 15px;
+}
+
+#convertButton {
+    transition: background-color 0.3s;
+}
+
+#convertButton:hover {
+    background-color: rgb(78, 78, 82);
+}
+
+#output {
+    margin-top: 20px;
+    font-size: 18px;
+    color: rgb(218, 216, 216);
+}
+
+h1 {
+    color: rgb(218, 216, 216);
+}
