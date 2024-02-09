@@ -51,24 +51,6 @@ function morseToText(morse) {
     }).join(" ")
 }
 
-// document.getElementById("convertButton").addEventListener("click", function () {
-//     const inputText = document.getElementById("textInput").value.trim();
-//     const outputElement = document.getElementById("output");
-
-//     if (inputText === "") {
-//         outputElement.textContent = "You must type something first.";
-//     } else if (/[a-z]/i.test(inputText)) {
-//         const morseCode = textToMorse(inputText);
-//         outputElement.textContent = "Morse Code: " + morseCode + inputText;
-//     } else if (inputText.toLowerCase() === "i love you") {
-//         const morseCode = textToMorse(inputText);
-//         outputElement.textContent = "Morse Code: " + morseCode + " me2.";
-//     } else {
-//         const text = morseToText(inputText);
-//         outputElement.textContent = "Text: " + text;
-//     }
-// });
-
 document.getElementById("convertButton").addEventListener("click", function () {
     const inputText = document.getElementById("textInput").value.trim();
     const outputElement = document.getElementById("output");
