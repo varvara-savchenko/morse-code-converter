@@ -1,13 +1,23 @@
+* {
+    font-family: 'Courier New';
+    font-weight: normal;
+    margin-top: 70px;
+}
+
 body {
-    font-family: 'Lucida Sans Unicode';
     text-align: center;
     background-color: rgb(36, 36, 38);
+}
+
+.main {
+    margin-top: 0px;
 }
 
 input,
 #convertButton {
     font-size: 16px;
     padding: 10px 20px;
+    margin-top: 5px;
     margin-left: -1px;
     margin-bottom: 10px;
     border: 1px solid rgb(218, 216, 216);
@@ -25,16 +35,43 @@ input::placeholder {
     margin-left: 5px;
 }
 
-#convertButton:hover {
-    background-color: rgb(78, 78, 82);
-}
-
 #output {
     margin-top: 20px;
-    font-size: 18px;
+    font-size: 15px;
     color: rgb(218, 216, 216);
 }
 
 h1 {
     color: rgb(218, 216, 216);
+    text-transform: uppercase;
+}
+
+.button-container {
+    margin-top: 0px;
+}
+
+#copyButton,
+#clearButton {
+    font-size: 10px;
+    padding: 5px 5px;
+    margin-top: 20px;
+    border: 0.5px solid rgb(218, 216, 216);
+    background-color: rgb(36, 36, 38);
+    color: rgb(218, 216, 216);
+    opacity: 70%;
+    cursor: pointer;
+}
+
+#clearButton {
+    margin-left: 5px;
+}
+
+#copyButton {
+    margin-right: 5px;
+}
+
+#copyButton:hover,
+#clearButton:hover,
+#convertButton:hover {
+    opacity: 40%;
 }
