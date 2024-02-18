@@ -53,7 +53,9 @@ function morseToText(morse) {
 
 function copyText(outputElement) {
     let copyButton = document.getElementById("copyButton");
-    if (copyButton === null) {
+    if (outputElement.textContent === "" && copyButton === null) {
+        clearButton.remove();
+    } else if (outputElement.textContent !== "" && copyButton === null) {
         copyButton = document.createElement("button");
         copyButton.textContent = "copy";
         copyButton.id = "copyButton";
@@ -68,22 +70,20 @@ function copyText(outputElement) {
 }
 
 function clearText() {
+    let outputElement = document.getElementById("output");
     let clearButton = document.getElementById("clearButton");
-    if (clearButton === null) {
+    if (outputElement.textContent === "" && clearButton !== null) {
+        clearButton.remove();
+    } else if (outputElement.textContent !== "" && clearButton === null) {
         clearButton = document.createElement("button");
         clearButton.textContent = "clear";
         clearButton.id = "clearButton";
         clearButton.addEventListener("click", function () {
             document.getElementById("textInput").value = "";
             document.getElementById("output").textContent = "";
-            elements = ["copyButton", "clearButton"];
-            elements.forEach((element) => {
-                document.getElementById(element).classList.add("hidden");
-            })
-        })
-        document.querySelector(".button-container").appendChild(clearButton);
-    } else {
-        document.querySelector(".button-container").appendChild(copyButton);
+            clearButton.remove()
+            copyButton.remove()
+        });
         document.querySelector(".button-container").appendChild(clearButton);
     }
 }
@@ -106,7 +106,7 @@ function convertText(inputText) {
         outputElement.textContent = "Invalid characters.";
     }
 
-    if (outputElement.textContent !== "" && inputText !== "") {
+    if (outputElement.textContent !== "" && outputElement.textContent !== "Invalid characters." && inputText !== "") {
         copyText(outputElement);
         clearText();
     }
