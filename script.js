@@ -51,11 +51,13 @@ function morseToText(morse) {
     }).join(" ")
 }
 
-function copyText(outputElement) {
+function updateButtons(outputElement) {
     let copyButton = document.getElementById("copyButton");
-    if (outputElement.textContent === "" && copyButton === null) {
+    let clearButton = document.getElementById("clearButton");
+
+    if (outputElement.textContent === "" && clearButton !== null) {
         clearButton.remove();
-    } else if (outputElement.textContent !== "" && copyButton === null) {
+    } else if (outputElement.textContent !== "" && clearButton === null && copyButton === null) {
         copyButton = document.createElement("button");
         copyButton.textContent = "copy";
         copyButton.id = "copyButton";
@@ -66,18 +68,11 @@ function copyText(outputElement) {
             })
         })
         document.querySelector(".button-container").appendChild(copyButton);
-    }
-}
 
-function clearText() {
-    let outputElement = document.getElementById("output");
-    let clearButton = document.getElementById("clearButton");
-    if (outputElement.textContent === "" && clearButton !== null) {
-        clearButton.remove();
-    } else if (outputElement.textContent !== "" && clearButton === null) {
         clearButton = document.createElement("button");
         clearButton.textContent = "clear";
         clearButton.id = "clearButton";
+
         clearButton.addEventListener("click", function () {
             document.getElementById("textInput").value = "";
             document.getElementById("output").textContent = "";
@@ -107,8 +102,7 @@ function convertText(inputText) {
     }
 
     if (outputElement.textContent !== "" && outputElement.textContent !== "Invalid characters." && inputText !== "") {
-        copyText(outputElement);
-        clearText();
+        updateButtons(outputElement);
     }
 }
 
