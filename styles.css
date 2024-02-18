@@ -1,7 +1,7 @@
 * {
     font-family: 'Courier New';
     font-weight: normal;
-    margin-top: 70px;
+    margin-top: 130px;
 }
 
 body {
@@ -11,6 +11,15 @@ body {
 
 .main {
     margin-top: 0px;
+}
+
+img {
+    width: 100px;
+    height: 120px;
+    position: fixed;
+    top: 0;
+    transform: translateX(-50%) rotate(40deg);
+    opacity: 20%;
 }
 
 input,
